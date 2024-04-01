@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-scaling-dp
+  namespace: app-scaling
+spec:
+  selector:
+    matchLabels:
+      app: app-scaling
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: app-scaling
+    spec:
+      containers:
+      - name: app-scaling
+        image: josecyber/app-scaling:latest
+        resources:
+          requests:
+            cpu: 50m
+            memory: 100Mi
+          limits:
+            cpu: 50m
+            memory: 100Mi
+       

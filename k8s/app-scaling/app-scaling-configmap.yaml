@@ -1,0 +1,7 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: app-scaling-cfg
+  namespace: app-scaling
+data:
+  PORT: '8080'
