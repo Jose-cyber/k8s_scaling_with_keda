@@ -1,7 +1,6 @@
 # K8s scaling with KEDA
 
-This project is an example of how to use KEDA to scale deployments in Kubernetes, I will show you how to install, configure and give one case of how to use KEDA for scaling.
-
+This project is an example of how to use KEDA to scale deployments on Kubernetes. I will show you how to install, configure, and provide a use case for how to use KEDA to scale an application using CPU metrics.
 
 ## Required:
 
@@ -16,7 +15,7 @@ The first thing that we need to deploy the example-app is creating a namespace:
 <pre>
 kubectl create ns app-scaling
 </pre>
-After namespace app was created, we need to deploy the app, for this action run the command below:
+After app namespace was created, we need to deploy the app, for this action run the command below:
 <pre>
 kubectl apply -f k8s/app-scaling/
 </pre>
@@ -42,7 +41,7 @@ You can use KEDA to 3 different functions in Kubernetes, they are:
 * **Admission webhooks**: Automatically validate resource changes to prevent misconfiguration and enforce best practices by using an admission controller. 
 
 ### Install KEDA
-In this case, I'm using helm to install [KEDA](https://keda.sh/), but if you want to know more about install, see the official docs.
+In this case, I'm using helm to install [KEDA](https://keda.sh/), but if you want to know more about install, see the official [docs](https://keda.sh/docs/2.13/deploy/).
 
 Adding repo:
 <pre>
